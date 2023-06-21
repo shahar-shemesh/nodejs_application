@@ -26,12 +26,6 @@ app.route("/")
 
         if (month < 1 || month > 12){ return res.status(400).json({error: "The month is invalid."}) }
 
-        // //check that user exists
-        // user.findOne({ id: user_id }).then()
-        //     .catch(function() {
-        //         const err = {"error":"The user could not be located."};
-        //         return res.status(400).json(err);
-        // });
 
         report.findOne({ user_id: user_id, month: month, year: year })
             .then(function (foundReport) {
