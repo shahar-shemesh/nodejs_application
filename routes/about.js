@@ -10,6 +10,7 @@ const app = express();
 
 app.route("/")
     .get(function (req, res) {
+        // An array of developer objects
         const developers = [
             {
                 firstName: 'shahar',
@@ -30,6 +31,8 @@ app.route("/")
                 email: 'talrajtr@gmail.com',
             }
         ];
+
+        // Send the developers array as the response
         res.send(developers);
     });
 

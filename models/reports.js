@@ -6,10 +6,11 @@ Tal Reguan, ID: 315095489
 
 const mongoose = require('mongoose');
 
+// Define the report schema using the mongoose.Schema class
 const reportSchema = new mongoose.Schema({
-    user_id: { type: String, required: true },
+    user_id: { type: Number, required: true },
     month: { type: Number, min: 1, max: 12, required: true },
-    year: { type: Number, required: true },
+    year: { type: Number, max: new Date().getFullYear(), required: true },
     categories: { type: JSON, default:
         {
             food: [],
@@ -23,6 +24,8 @@ const reportSchema = new mongoose.Schema({
     }
 });
 
+// Create a Mongoose model named "report" based on the reportSchema
 const report = mongoose.model("report", reportSchema);
 
+// Export the "report" model
 module.exports = report;
