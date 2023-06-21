@@ -9,12 +9,10 @@ const mongoose = require('mongoose');
 const about = require('./routes/about');
 const addcost = require('./routes/addcost');
 const report = require('./routes/report');
-
 const app = express();
 
-
 // Connect to the MongoDB database
-mongoose.connect('mongodb://127.0.0.1:27017/nodejs-finalDB', { useNewUrlParser: true }).then(function () {
+mongoose.connect('mongodb+srv://nodejs-project:nodejs-project-hit@cluster0.fycjem3.mongodb.net/nodejs-finalDB', { useNewUrlParser: true }).then(function () {
     console.log("Connected to DB.");
 }).catch(function(err) {
     console.log(err);
