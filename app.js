@@ -10,6 +10,11 @@ const about = require('./routes/about');
 const addcost = require('./routes/addcost');
 const report = require('./routes/report');
 const app = express();
+const PORT = 4000;
+
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT} `);
+});
 
 // Connect to the MongoDB database
 mongoose.connect('mongodb+srv://nodejs-project:nodejs-project-hit@cluster0.fycjem3.mongodb.net/nodejs-finalDB', { useNewUrlParser: true }).then(function () {
@@ -32,9 +37,5 @@ app.use('/addcost', addcost);
 app.use('/report', report);
 app.use('/about', about);
 
-// Start the server on port 3000
-app.listen(3000, function () {
-  console.log("Server started on port 3000");
-});
 
 module.exports = app;
