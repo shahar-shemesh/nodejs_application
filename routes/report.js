@@ -28,10 +28,10 @@ app.route("/")
         if (inputDate.getMonth() + 1 != month || inputDate.getFullYear() != year) {
             return res.status(400).json({ "Error": "The date is invalid." });
         }
-        const currentDate = new Date();
-        if (inputDate > currentDate) {
-            return res.status(400).json({ "Error": "Entering a date beyond the current day is not permitted." });
-        }
+        // const currentDate = new Date();
+        // if (inputDate > currentDate) {
+        //     return res.status(400).json({ "Error": "Entering a date beyond the current day is not permitted." });
+        // }
 
         
         // Finding a report matching the user ID, month, and year.
